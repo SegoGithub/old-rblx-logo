@@ -7,6 +7,9 @@
     "permissions": [
         "contentSettings"
     ],
+    "action": {
+        "default_popup": "index.html"
+    },
     "content_scripts": [
         {
             "matches": [
