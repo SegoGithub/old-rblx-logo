@@ -1,0 +1,47 @@
+{
+    "name": "Old Roblox Logo",
+    "version": "1.0.0",
+    "description": "Replace the new Roblox logo with the old one.",
+    "manifest_version": 3,
+    "author": "Sego",
+    "permissions": [
+        "contentSettings"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.roblox.com/*"
+            ],
+            "css": [
+                "css/rblx.css"
+            ]
+        }, {
+            "matches": [
+                "https://corp.roblox.com/*"
+            ],
+            "css": [
+                "css/corp.css"
+            ]
+        }, {
+            "matches": [
+                "https://blog.roblox.com/*"
+            ],
+            "css": [
+                "css/blog.css"
+            ]
+        }, {
+            "matches": [
+                "https://corporate.roblox.com/*"
+            ],
+            "css": [
+                "css/corpo.css"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "icon/16.png",
+        "32": "icon/32.png",
+        "48": "icon/48.png",
+        "128": "icon/128.png"
+    }
+}
