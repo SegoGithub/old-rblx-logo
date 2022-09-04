@@ -1,41 +1,48 @@
 {
     "name": "Old Roblox Logo",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Replace the new Roblox logo with the old one.",
-    "manifest_version": 3,
+    "manifest_version": 2,
     "author": "Sego",
-    "permissions": [
-        "contentSettings"
-    ],
-    "action": {
-        "default_popup": "index.html"
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "oldrblxlogo@sego.app"
+        }
     },
     "content_scripts": [
         {
             "matches": [
-                "https://www.roblox.com/*"
+                "https://www.roblox.com/*",
+                "https://web.roblox.com/*"
             ],
+            "run_at": "document_start",
             "css": [
                 "css/rblx.css"
             ]
-        }, {
+        },
+        {
             "matches": [
                 "https://corp.roblox.com/*"
             ],
+            "run_at": "document_start",
             "css": [
                 "css/corp.css"
             ]
-        }, {
+        },
+        {
             "matches": [
                 "https://blog.roblox.com/*"
             ],
+            "run_at": "document_start",
             "css": [
                 "css/blog.css"
             ]
-        }, {
+        },
+        {
             "matches": [
                 "https://corporate.roblox.com/*"
             ],
+            "run_at": "document_start",
             "css": [
                 "css/corpo.css"
             ]
