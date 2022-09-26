@@ -2,13 +2,8 @@
     "name": "Old Roblox Logo",
     "version": "1.0.4",
     "description": "Replace the new Roblox logo with the old one.",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "author": "Sego",
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "oldrblxlogo@sego.app"
-        }
-    },
     "content_scripts": [
         {
             "matches": [
