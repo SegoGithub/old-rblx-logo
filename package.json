@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@node-minify/core": "^7.0.0",
+    "@node-minify/csso": "^7.0.0",
+    "@node-minify/uglify-es": "^7.0.0",
+    "archiver": "^5.3.1",
+    "fs-extra": "^10.1.0",
+    "jsonminify": "^0.4.2"
+  }
+}
