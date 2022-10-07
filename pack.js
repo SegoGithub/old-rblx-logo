@@ -17,17 +17,12 @@ fs.mkdir('chrome-tmp', err => {
     console.log('Created chrome-tmp directory');
 })
 
-fs.readFile('manifest-chrome.json', 'utf8', (err, data) => {
+fse.copy('manifest-chrome.json', 'chrome-tmp/manifest.json', err => {
     if (err) {
         throw err;
     }
-    fs.writeFile('chrome-tmp/manifest.json', jsonminify(data), err => {
-        if (err) {
-            throw err;
-        }
-        console.log("Created minified manifest-chrome.json in chrome-tmp/manifest.json");
-    });
-});
+    console.log('Copied manifest-chrome.json to chrome-tmp/manifest.json');
+})
 
 try {
     fse.copy("./icon/", "./chrome-tmp/icon/");
@@ -43,19 +38,12 @@ fs.mkdir('chrome-tmp/css', err => {
     console.log('Created chrome-tmp/css directory');
 })
 
-fs.readdirSync('css').forEach(file => {
-    minify({
-        compressor: csso,
-        input: `css/${file}`,
-        output: `chrome-tmp/css/${file}`,
-        callback: function (err, min) {
-            if (err) {
-                throw err;
-            }
-            console.log(`Minified and copied css/${file} to chrome-tmp/css/${file}`);
-        }
-    });
-});
+fse.copy('./css/', './chrome-tmp/css/', err => {
+    if (err) {
+        throw err;
+    }
+    console.log('Copied css folder to chrome-tmp');
+})
 
 fs.mkdir('chrome-tmp/js', err => {
     if (err) {
@@ -64,24 +52,12 @@ fs.mkdir('chrome-tmp/js', err => {
     console.log('Created chrome-tmp/js directory');
 })
 
-fs.readdirSync('js').forEach(file => {
-    minify({
-        compressor: uglifyES,
-        input: `js/${file}`,
-        output: `chrome-tmp/js/${file}`,
-        options: {
-            warnings: true,
-            mangle: true,
-            compress: true,
-        },
-        callback: function (err, min) {
-            if (err) {
-                throw err;
-            }
-            console.log(`Minified and copied js/${file} to chrome-tmp/js/${file}`);
-        }
-    });
-});
+fse.copy('./js/', './chrome-tmp/js/', err => {
+    if (err) {
+        throw err;
+    }
+    console.log('Copied js folder to chrome-tmp');
+})
 
 fs.copyFile('LICENSE', 'chrome-tmp/LICENSE', err => {
     if (err) {
@@ -116,17 +92,12 @@ fs.mkdir('firefox-tmp', err => {
     console.log('Created firefox-tmp directory');
 })
 
-fs.readFile('manifest.json', 'utf8', (err, data) => {
+fse.copy('manifest.json', 'firefox-tmp/manifest.json', err => {
     if (err) {
         throw err;
     }
-    fs.writeFile('firefox-tmp/manifest.json', jsonminify(data), err => {
-        if (err) {
-            throw err;
-        }
-        console.log("Created minified manifest.json in firefox-tmp/manifest.json");
-    });
-});
+    console.log('Copied manifest.json to firefox-tmp/manifest.json');
+})
 
 try {
     fse.copy("./icon/", "./firefox-tmp/icon/");
@@ -142,19 +113,12 @@ fs.mkdir('firefox-tmp/css', err => {
     console.log('Created firefox-tmp/css directory');
 })
 
-fs.readdirSync('css').forEach(file => {
-    minify({
-        compressor: csso,
-        input: `css/${file}`,
-        output: `firefox-tmp/css/${file}`,
-        callback: function (err, min) {
-            if (err) {
-                throw err;
-            }
-            console.log(`Minified and copied css/${file} to firefox-tmp/css/${file}`);
-        }
-    });
-});
+fse.copy('./css/', './firefox-tmp/css/', err => {
+    if (err) {
+        throw err;
+    }
+    console.log('Copied css folder to firefox-tmp');
+})
 
 fs.mkdir('firefox-tmp/js', err => {
     if (err) {
@@ -163,24 +127,12 @@ fs.mkdir('firefox-tmp/js', err => {
     console.log('Created firefox-tmp/js directory');
 })
 
-fs.readdirSync('js').forEach(file => {
-    minify({
-        compressor: uglifyES,
-        input: `js/${file}`,
-        output: `firefox-tmp/js/${file}`,
-        options: {
-            warnings: true,
-            mangle: true,
-            compress: true,
-        },
-        callback: function (err, min) {
-            if (err) {
-                throw err;
-            }
-            console.log(`Minified and copied js/${file} to firefox-tmp/js/${file}`);
-        }
-    });
-});
+fse.copy('./js/', './firefox-tmp/js/', err => {
+    if (err) {
+        throw err;
+    }
+    console.log('Copied js folder to firefox-tmp');
+})
 
 fs.copyFile('LICENSE', 'firefox-tmp/LICENSE', err => {
     if (err) {
