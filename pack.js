@@ -45,13 +45,6 @@ fse.copy('./css/', './chrome-tmp/css/', err => {
     console.log('Copied css folder to chrome-tmp');
 })
 
-fs.mkdir('chrome-tmp/js', err => {
-    if (err) {
-        throw err;
-    }
-    console.log('Created chrome-tmp/js directory');
-})
-
 fse.copy('./js/', './chrome-tmp/js/', err => {
     if (err) {
         throw err;
@@ -118,13 +111,6 @@ fse.copy('./css/', './firefox-tmp/css/', err => {
         throw err;
     }
     console.log('Copied css folder to firefox-tmp');
-})
-
-fs.mkdir('firefox-tmp/js', err => {
-    if (err) {
-        throw err;
-    }
-    console.log('Created firefox-tmp/js directory');
 })
 
 fse.copy('./js/', './firefox-tmp/js/', err => {
