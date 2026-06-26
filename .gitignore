@@ -128,8 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-old-rblx-logo-chrome.zip
-old-rblx-logo-firefox.zip
-chrome-tmp
-firefox-tmp
+old-rblx-logo*
+*-tmp
 .DS_Store

@@ -1,6 +1,6 @@
 {
     "name": "Old Roblox Logo",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Replace the new Roblox logo with the old one.",
     "manifest_version": 2,
     "author": "Sego",
@@ -25,36 +25,16 @@
         },
         {
             "matches": [
-                "https://corp.roblox.com/*"
+                "https://about.roblox.com/*",
+                "https://careers.roblox.com/*",
+                "https://brands.roblox.com/*"
             ],
             "run_at": "document_start",
             "css": [
-                "css/corp.css"
-            ], "js": [
-                "js/corp.js"
-            ]
-        },
-        {
-            "matches": [
-                "https://blog.roblox.com/*"
-            ],
-            "run_at": "document_start",
-            "css": [
-                "css/blog.css"
+                "css/about.css"
             ],
             "js": [
-                "js/blog.js"
-            ]
-        },
-        {
-            "matches": [
-                "https://corporate.roblox.com/*"
-            ],
-            "run_at": "document_start",
-            "css": [
-                "css/corpo.css"
-            ], "js": [
-                "js/corpo.js"
+                "js/favicon.js"
             ]
         },
         {
@@ -62,16 +42,11 @@
                 "https://en.help.roblox.com/*"
             ],
             "run_at": "document_start",
-            "js": [
-                "js/support.js"
-            ]
-        },
-        {
-            "matches": [
-                "https://careers.roblox.com/*"
+            "css": [
+                "css/help.css"
             ],
             "js": [
-                "js/careers.js"
+                "js/favicon.js"
             ]
         }
     ],

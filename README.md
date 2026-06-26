@@ -13,3 +13,17 @@
 <img alt="Mozilla Add-on" src="https://img.shields.io/amo/users/old-roblox-logo?style=for-the-badge">
 <img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/old-roblox-logo?style=for-the-badge">
 </p>
+
+## Building
+
+Requires [Node.js](https://nodejs.org/).
+
+```bash
+npm install
+npm run pack
+```
+
+This produces two files in the project root:
+
+- `old-rblx-logo-chrome.zip` (Manifest V3)
+- `old-rblx-logo-firefox.zip` (Manifest V2)
