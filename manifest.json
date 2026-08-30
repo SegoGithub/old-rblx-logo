@@ -6,7 +6,10 @@
     "author": "Sego",
     "browser_specific_settings": {
         "gecko": {
-            "id": "oldrblxlogo@sego.app"
+            "id": "oldrblxlogo@sego.app",
+            "data_collection_permissions": {
+                "required": ["none"]
+            }
         }
     },
     "content_scripts": [
